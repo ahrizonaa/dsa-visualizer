@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+draw-button,
+radio-group,
+switch-panel {
+	display: contents !important;
+}
+body {
+	height: 600px;
+	width: 600px;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #101010;
+}
+
+#content {
+	position: relative;
+}
+
+canvas {
+	height: 380px;
+	width: 380px;
+	object-fit: contain;
+}
+
+#textarea {
+	resize: none !important;
+	height: 125px !important;
+}
+#textarea::placeholder {
+	font-size: 0.75rem;
+}
+
+div.options-panel {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.form-check.form-switch {
+	display: flex;
+	align-items: center;
+}
+
+.hide-panel {
+	display: none !important;
+}
+
+.hide-switch-panel {
+	max-height: 0px !important;
+	overflow: hidden;
+	pointer-events: none;
+	position: relative;
+}
+
+#icon-panel div[role='group'] {
+	padding: 0px !important;
+}
+
+#icon-panel > svg {
+	width: 48px !important;
+	height: 48px !important;
+	pointer-events: none;
+}
+
+button[dsa-option] {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: transparent;
+}
+
+div[data-te-popconfirm-popover] {
+	width: 165px !important;
+}
+
+div[data-te-popconfirm-body] {
+	/* backdrop-filter: blur(5px) !important; */
+}
+
+/* Firefox */
+* {
+	scrollbar-width: auto;
+	scrollbar-color: #2b2b2b #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #848484;
+	border-radius: 10px;
+}
+
+#color-picker-label {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	margin-bottom: 25px;
+	width: 25px;
+	height: 25px;
+	background-color: transparent;
+	transition: all 0.2s linear;
+	/* padding: 5px 5px 5px 5px; */
+	box-sizing: content-box;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 10px;
+	text-transform: lowercase;
+	font-weight: 300;
+}
+
+#color-picker-label[data-node] {
+	margin-right: 25px;
+	background-color: #d1d1d1;
+	color: #101010;
+}
+
+#color-picker-label[data-edge] {
+	margin-right: 75px;
+	background-color: #eeeeee;
+	color: #101010;
+}
+
+#color-picker-label:hover {
+	transform: scale(1.1);
+}
+
+#color-picker-label > input {
+	visibility: hidden;
+	height: 0px !important;
+}
+
+#examples-list {
+	border-radius: 10px;
+	border: 1px solid #21212100;
+	transition: border 0.2s linear;
+}
+#examples-list:hover {
+	border: 1px solid #212121;
+}
+
+#examples-list > button {
+	margin-bottom: 3px;
+}
+
+#examples-list > button:last-child {
+	margin-bottom: 0 !important;
+}
+
+#reset-btn-container {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+
+#reset-btn {
+	font-size: 8px !important;
+}

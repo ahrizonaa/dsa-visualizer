@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+			rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+		<link href="./popup.css" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="../src/animated-datastructure-icons/styles/graph-svg-animation.css" />
+		<link
+			rel="stylesheet"
+			href="../src/animated-datastructure-icons/styles/tree-svg-animation.css" />
+		<link
+			rel="stylesheet"
+			href="../src/animated-datastructure-icons/styles/stack-svg-animation.css" />
+		<link
+			rel="stylesheet"
+			href="../src/animated-datastructure-icons/styles/queue-svg-animation.css" />
+		<link
+			rel="stylesheet"
+			href="../src/animated-datastructure-icons/styles/linkedlist-svg-animation.css" />
+	</head>
+	<body>
+		<div
+			id="content"
+			class="w-full h-full flex flex-col justify-start items-start">
+			<div id="icon-panel" class="pt-4 w-full flex justify-center">
+				<radio-group></radio-group>
+			</div>
+
+			<div class="w-full flex flex-grow">
+				<div
+					id="form-wrapper"
+					class="relative h-full w-full p-4 flex flex-col justify-end">
+					<div class="collapse py-2 w-full">
+						<div class="!visible hidden" id="collapse-item">
+							<div
+								class="rounded p-3 bg-neutral-800 px-2 pb-2 pt-2.5 text-xs font-light leading-normal text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] transition duration-150 ease-in-out hover:bg-neutral-800 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-neutral-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] dark:bg-neutral-900 dark:shadow-[0_4px_9px_-4px_#030202] dark:hover:bg-neutral-900 dark:hover:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:focus:bg-neutral-900 dark:focus:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:active:bg-neutral-900 dark:active:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)]">
+								<h6
+									id="controls-title"
+									class="mb-2 text-base font-medium leading-tight text-neutral-500 dark:text-neutral-50">
+									Variants
+								</h6>
+								<switch-panel></switch-panel>
+							</div>
+						</div>
+					</div>
+					<div class="h-[125px] mb-2 w-full" id="example-pane">
+						<div
+							class="flex flex-col items-center relative overflow-x-hidden overflow-y-hidden h-full rounded p-3 bg-neutral-800 px-2 pb-2 pt-2.5 text-xs font-light leading-normal text-neutral-50 shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] transition duration-150 ease-in-out hover:bg-neutral-800 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-neutral-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:outline-none focus:ring-0 active:bg-neutral-900 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] dark:bg-neutral-900 dark:shadow-[0_4px_9px_-4px_#030202] dark:hover:bg-neutral-900 dark:hover:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:focus:bg-neutral-900 dark:focus:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)] dark:active:bg-neutral-900 dark:active:shadow-[0_8px_9px_-4px_rgba(3,2,2,0.3),0_4px_18px_0_rgba(3,2,2,0.2)]">
+							<h6
+								id="examples-title"
+								class="w-full mb-2 text-base font-medium leading-tight text-neutral-500 dark:text-neutral-50">
+								Examples
+							</h6>
+							<div
+								class="h-full w-full block overflow-y-auto relative"
+								id="examples-list"></div>
+						</div>
+					</div>
+					<div>
+						<form id="textarea-form">
+							<div
+								class="relative pt-2 mb-3 font-light text-sm dark:bg-neutral-900"
+								data-te-validate="input"
+								data-te-validation-ruleset="postValidation"
+								data-te-input-wrapper-init>
+								<textarea autofocus="true" id="textarea"></textarea>
+								<draw-button> </draw-button>
+							</div>
+						</form>
+					</div>
+					<div id="reset-btn-container">
+						<button
+							id="reset-btn"
+							type="button"
+							data-te-ripple-init
+							data-te-ripple-color="light"
+							class="inline-block rounded px-1 mx-4 pb-1 pt-1 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-neutral-100 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700">
+							Reset
+						</button>
+					</div>
+				</div>
+				<div
+					id="idle-overlay"
+					class="relative w-full h-full flex justify-center items-center">
+					<canvas></canvas>
+				</div>
+			</div>
+			<label
+				data-edge
+				class="inline-block rounded px-1 py-1 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out cursor-pointer hover:bg-sky-700"
+				id="color-picker-label">
+				<input id="color-picker-edge" type="color" />
+				<span>edge</span>
+			</label>
+			<label
+				data-node
+				class="inline-block rounded px-1 py-1 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out cursor-pointer hover:bg-sky-700"
+				id="color-picker-label">
+				<input id="color-picker-node" type="color" />
+				<span>node</span>
+			</label>
+		</div>
+
+		<script type="module" src="./popup.js"></script>
+	</body>
+</html>
